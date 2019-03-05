@@ -5,7 +5,7 @@ import com.three2one.assessment.model.Course;
 import com.three2one.assessment.model.StudentCourse;
 import com.three2one.assessment.service.CourseService;
 import com.three2one.assessment.service.StudentCourseService;
-import com.three2one.assessment.util.ResourceConstant;
+import com.three2one.assessment.util.rest.ResourceConstant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

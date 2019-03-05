@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public interface CourseRepository extends CrudRepository<Course, Long> {
     @Query(nativeQuery = true, value = "select distinct course.* from course  course where course.id not in (select course_id from student_course  where student_id = :studentId )")
-    List<Course> getAvailableCourses(@Param("studentId") Long userId, Pageable pageable);
+    List<Course> getAvailableCourses(@Param("studentId") Long studentId, Pageable pageable);
 
 
     @Query(value = "select student from StudentCourse studentCourse join studentCourse.student student where student.id = :studentId ")

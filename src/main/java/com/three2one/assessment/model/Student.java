@@ -17,6 +17,10 @@ public class Student extends BaseEntity {
     @Valid
     private String name;
 
+    @NotNull(message = "Student's email can't by null")
+    @Valid
+    private String email;
+
     @NotNull(message = "Student's username can't by null")
     @Valid
     private String username;
@@ -32,15 +36,13 @@ public class Student extends BaseEntity {
     public Student() {
     }
 
-    public Student(@NotNull(message = "Student's name can't by null") @Valid String name,
-                   @NotNull(message = "Student's username can't by null") @Valid String username,
-                   @NotNull(message = "Student's password can't by null") @Valid String password,
-                   String dOB, Long gender) {
-        this.setName(name);
-        this.setUsername(username);
-        this.setPassword(password);
-        this.setdOB(dOB);
-        this.setGender(gender);
+    public Student(@NotNull(message = "Student's name can't by null") @Valid String name, @NotNull(message = "Student's email can't by null") @Valid String email, @NotNull(message = "Student's username can't by null") @Valid String username, @NotNull(message = "Student's password can't by null") @Valid String password, String dOB, Long gender) {
+        this.name = name;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.dOB = dOB;
+        this.gender = gender;
     }
 
     @PrePersist
@@ -68,6 +70,14 @@ public class Student extends BaseEntity {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getUsername() {

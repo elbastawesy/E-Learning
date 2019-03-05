@@ -13,7 +13,7 @@ public class StudentServiceImpl implements StudentService {
     StudentRepository studentRepository;
 
     @Override
-    public Student save(Student student) throws ValidationException {
+    public Student save(Student student) throws Exception {
         student.setId(null);
         validateBusinessRule(student);
         return studentRepository.save(student);
@@ -21,9 +21,9 @@ public class StudentServiceImpl implements StudentService {
 
 
     private void validateBusinessRule(Student student) throws ValidationException {
-        if(student.getId() == null){
+        if (student.getId() == null) {
             boolean existsByUsername = studentRepository.existsByUsername(student.getUsername());
-            if(existsByUsername){
+            if (existsByUsername) {
                 throw new ValidationException("Username already exist");
             }
         }

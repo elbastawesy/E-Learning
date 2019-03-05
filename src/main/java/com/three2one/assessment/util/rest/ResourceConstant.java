@@ -1,4 +1,4 @@
-package com.three2one.assessment.util;
+package com.three2one.assessment.util.rest;
 
 public class ResourceConstant {
     public static final String STUDENT_RESOURCE = "/student";
