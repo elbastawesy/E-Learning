@@ -49,6 +49,6 @@ public class CourseController {
     @PostMapping(path = ResourceConstant.COURSE_UNREGISTER)
     public ResponseEntity unRegisterFromCourse(@RequestBody StudentCourseDTO studentCourseDTO) throws Exception {
         studentCourseService.unRegisterFromCourse(studentCourseDTO);
-        return ResponseEntity.ok("Successfully Unregistered : ");
+        return ResponseEntity.ok().build();
     }
 }
